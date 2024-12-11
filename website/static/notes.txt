@@ -1,0 +1,2 @@
+images, javascript, css files go inside here
+can be loaded into html

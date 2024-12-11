@@ -1,0 +1,30 @@
+<!--Extend base html page and can change any defined blocks-->
+{% extends "base.html" %}
+
+{% block title %}HOME PAGE!{% endblock %}
+
+{% block content %}
+{# <h1>Welcome to the home page!</h1> #}
+<h1 align="center">NOTES</h1>
+<ul class="list-group list-group-flush" id="notes">
+    {# Displays each note per user #}
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{ note.data }}
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})"> {#javascript function speaking to backend to delete notes#}
+        <span aria-hidden="true">
+            &times;
+        </span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+</br>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+{% endblock %}
