@@ -1,3 +1,7 @@
+#Cole Kaminski
+#11 December 2024
+#Partial Credit to Tech With Tim via YouTube
+
 from website import create_app
 
 app = create_app()
